@@ -8,17 +8,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const theForm = document.querySelector('#form-element');
     theForm.addEventListener('submit', handleFormSubmit);
     });
-
+    let ShoutOutId = 0;
     const handleFormSubmit = function (form) {
         form.preventDefault();
+
         const newShoutOutList = document.createElement('li');
-        
+        ShoutOutId += 1;
+
+        const shoutId = document.createElement('p');
+        shoutId.textContent = ShoutOutId;
+        newShoutOutList.appendChild(shoutId);
+
         const nameFrom = document.createElement('p');
-        nameFrom.textContent = form.target.from.value;
+        nameFrom.textContent = `Shout out from: ${form.target.from.value}`;
         newShoutOutList.appendChild(nameFrom);
 
         const nameTo = document.createElement('p');
-        nameTo.textContent = form.target.to.value;
+        nameTo.textContent = `Shout out from: ${form.target.to.value}`;
         newShoutOutList.appendChild(nameTo);
 
         const shoutOuts = document.querySelector('#shout-out-list');
