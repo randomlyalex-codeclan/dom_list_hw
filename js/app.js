@@ -27,7 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
         nameTo.textContent = `Shout out from: ${form.target.to.value}`;
         newShoutOutList.appendChild(nameTo);
 
+        if ((form.target.from.value) && (form.target.to.value)) {
         const shoutOuts = document.querySelector('#shout-out-list');
         shoutOuts.appendChild(newShoutOutList);
         form.target.reset();
+        } else {
+            //add my code in here to say please enter name from name to
+        }
+        
       }
